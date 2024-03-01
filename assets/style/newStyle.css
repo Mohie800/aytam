@@ -1,0 +1,169 @@
+a {
+  color: #9bca41 !important;
+}
+
+.shape-1 {
+  width: 137px;
+  height: 20px;
+  border-radius: 999px;
+  background-color: #f0f0f0;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+}
+
+.chart-percentage {
+  position: absolute;
+  top: 25px;
+  left: 15px;
+  font-size: 10px;
+}
+
+.container-top-space {
+  margin-top: 100px;
+}
+.box-title {
+  margin-bottom: 20px;
+}
+
+.title-text {
+  font-size: 24px;
+  text-align: center;
+  width: fit-content;
+  margin-right: 10px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.title-text::before {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  content: "";
+  width: 100%;
+  height: 18px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-home {
+  height: 300px;
+  margin: 20px;
+  border: #9bca41 dashed 2px;
+}
+.box-home-bg {
+  background-image: url(/assets/Rectangle\ 2.png);
+  background-size: cover;
+  height: 300px;
+  margin: 20px;
+}
+
+.card-text {
+  font-size: 32px;
+}
+
+.card-box {
+  background-color: #fff;
+}
+
+.card-sub {
+  font-size: 8px;
+}
+
+.card-sub-value {
+  font-size: 15px;
+}
+
+.don-type {
+  box-shadow: 0px 0px 15px #00000029;
+  height: 105px;
+  margin-top: 10px;
+}
+
+.don-type-active {
+  border: solid 1px #9bca41 !important;
+}
+
+.green-check input[type="checkbox"]:checked {
+  /* accent-color: #fff; */
+  background-color: #9bca41;
+  border-color: #9bca41;
+}
+.green-check input[type="radio"]:checked {
+  /* accent-color: #fff; */
+  background-color: #9bca41;
+  border-color: #9bca41;
+}
+
+.green-check input[type="checkbox"] {
+  box-shadow: none;
+}
+.green-check input[type="radio"] {
+  box-shadow: none;
+}
+
+.text-size-13 {
+  font-size: 13px;
+}
+
+.black {
+  color: #111111;
+}
+
+.custom-control-input:checked ~ .textWhite {
+  color: #f0f0f0;
+}
+
+.details-box {
+  border: solid 1px #efefef;
+}
+
+.display-text {
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.display-box-top {
+  border-bottom: 1px solid #efefef;
+}
+
+.share-btn {
+  background-color: #18193d !important;
+}
+
+.share-box {
+  border: solid 1px #9bca41;
+  overflow-x: auto;
+  background-color: #fff;
+}
+
+/* fix styles */
+.custom-control-input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .box-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .title-text {
+    margin-right: 0;
+  }
+
+  .box-home-bg,
+  .box-home {
+    /* margin: 20px 0; */
+    width: 90% !important;
+  }
+}

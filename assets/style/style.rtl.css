@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+html,body{
+    direction: rtl;
+}
+body{
+    /* background-color: black; */
+    font-family: 'Cairo', serif;
+    /* min-height: 10000px; */
+}
+
+/* General Styles */
+a{
+    color: #9BCA41;
+}
+.py-100{
+    padding: 100px 0;
+}
+.flip{
+    transform: scaleX(-1);
+}
+.border-radius-0{
+    border-radius: 0!important;
+}
+.nowrap{
+    white-space: nowrap;
+}
+.w-fit{
+    width: fit-content!important;
+}
+.custom-control-label{
+    color: #9BCA41;
+}
+
+.custom-control-input:checked~.custom-control-label{
+    background-color: #9BCA41;
+    color: #FFFFFF;
+}
+.custom-control-input:checked~.custom-control-label .price{
+    background-color: #B1DD5D;
+    color: #FFFFFF;
+}
+
+.row.form-group{
+    display: flex;
+    align-items: center;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.small-font{
+    font-size: 12px;
+}
+.wide-title{
+    /* letter-spacing: 4px; */
+    text-transform: uppercase;
+}
+.bg-lightGrey{
+    background-color: #F2F1F0;
+}
+.bg-green{
+    background-color: #9BCA41;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.border-radius-5{
+    border-radius: 5px;
+}
+.sticky{
+    position: sticky;
+    top: 100px;
+}
+
+.text-lightGreen{
+    color: #9BCA41;
+}
+
+.navbar{
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 15px #00000029;
+}
+.navbar.scrolled .navbar-brand img{
+    width: 100px;
+}
+.navbar-brand img{
+    width: 230px;
+}
+section.intro{
+    padding-top: 210px;
+}
+
+.progress-bar-container{
+    background-color: #EEEEEE;
+    border-radius: 16px;
+    padding: 20px;
+}
+.progress-bar-container .progress{
+    background-color: #FFFFFF;
+    height: 25px;
+    border-radius: 16px;
+}
+.progress-bar-container .progress-bar{
+    background-color: #EAB61E;
+}
+
+.custom-control{
+    padding-right: 0;
+}
+.custom-control label{
+    background-color: #FFFFFF;
+    border-radius: 11px;
+    box-shadow: 0px 0px 15px #00000029;
+    overflow: hidden;
+    margin-top: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 50px;
+}
+
+
+.custom-control:not(:last-child) label{
+    margin-left: 30px;
+}
+
+.custom-control label::before, .custom-control label::after{
+    display: none;
+}
+
+.custom-control .price{
+    background-color: #EEEEEE;
+    color: #303030;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.qty-input {
+  color: #000;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.qty-input .product-qty {
+  background: transparent;
+  color: #303030;
+  font-weight: bold;
+  font-size: inherit;
+  border: none;
+  display: inline-block;
+  min-width: 0;
+  height: 2.5rem;
+  line-height: 1;
+}
+
+.qty-input .qty-count{
+    width: 30px;
+    height: 30px;
+    background: #9BCA41 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 15px #00000029;
+    border-radius: 7px;
+    border: none;
+    color: #FFFFFF;
+}
+.qty-input .product-qty:focus,
+.qty-input .qty-count:focus {
+  outline: none;
+}
+.qty-input .product-qty {
+  width: 50px;
+  min-width: 0;
+  display: inline-block;
+  text-align: center;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+.qty-input .product-qty::-webkit-outer-spin-button, .qty-input .product-qty::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+.qty-input .qty-count {
+  padding: 0;
+  cursor: pointer;
+  width: 2.5rem;
+  font-size: 1.25em;
+  text-indent: -100px;
+  overflow: hidden;
+  position: relative;
+}
+.qty-input .qty-count:before, .qty-input .qty-count:after {
+  content: "";
+  height: 2px;
+  width: 10px;
+  position: absolute;
+  display: block;
+  background: #FFFFFF;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.qty-input .qty-count--minus {
+  border-right: 1px solid #e2e2e2;
+}
+.qty-input .qty-count--add {
+  border-left: 1px solid #e2e2e2;
+}
+.qty-input .qty-count--add:after {
+  transform: rotate(90deg);
+}
+.qty-input .qty-count:disabled {
+  color: #ccc;
+  background: #f2f2f2;
+  cursor: not-allowed;
+}
+.qty-input .qty-count:disabled:before, .qty-input .qty-count:disabled:after {
+  background: #ccc;
+}
+
+.custom-control img{
+    max-height: 20px;
+}
+
+.container.tabs{
+    box-shadow: 0px 0px 15px #00000029;
+    border-radius: 39px;
+    overflow: hidden;
+}
+
+.nav.nav-tabs.nav-justified{
+    border: none;
+    background-color: #EEEEEE;
+}
+.nav-tabs .nav-link{
+    padding: 15px;
+    color: #1C1C1C;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    border-color: transparent;
+    color: #9BCA41;
+    font-weight: bold;
+}
+
+.sponsors{
+    padding: 50px 0;
+    background-color: #EEEEEE;
+}
+
+.main-footer{
+    background-color: #9BCA41;
+    color: #FFFFFF;
+    padding: 50px 0;
+}
+
+.main-footer .nav .nav-link{
+    color: #FFFFFF;
+}
+
+.nav.social .nav-link{
+    color: #9BCA41;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav.social{
+    margin: 20px auto;
+}
+
+.form-control{
+    border-radius: 16px;
+    height: 50px;
+}
+.form-control:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: #9BCA41 !important;
+}
+
+.modal-content{
+    border-radius: 20px;
+    overflow: hidden;
+}
+.modal-header{
+    background-color: #9BCA41;
+    color: #FFFFFF;
+}
+.modal-title{
+    font-weight: 900;
+}
+
+.modal-header .close{
+    padding: 0.5rem 1rem !important;
+    color: white !important;
+    font-size: 40px !important;
+}
+
+@media(max-width: 1000px){
+    .sponsors img{
+        max-width: 100px;
+    }
+    .main-footer .footer-logo{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section.intro{
+        padding-top: 180px;
+    }
+}
+
+
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true]{
+    background-color: transparent !important;
+}
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] .mysr-form-button{
+    background-color: #9BCA41 !important;
+    font-family: 'Cairo' !important;
+}
+
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] .mysr-form-label, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] label.mysr-form-label,
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] input.mysr-form-input, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] input.mysr-form-input[type=text]{
+    font-family: 'Cairo' !important;
+    font-size: 16px !important;
+}
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm.mysr-form-fixedWidth{
+    max-width: 100% !important;
+}
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] div.mysr-form-footer a, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] div.mysr-form-footer span,
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] div.mysr-form-footer span{
+    font-family: 'Cairo' !important;
+}
+
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] .mysr-form-label, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] label.mysr-form-label, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] input.mysr-form-input, #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] input.mysr-form-input[type=text]{
+    direction: ltr !important;
+    text-align: right;
+}
+#mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm[payment-form=true] .mysr-form-ccInputGroup .mysr-form-ccIconsGroup{
+    right: unset !important;
+    left: 0;
+    padding-right: unset !important;
+    padding-left: 9px;
+}
+
+
+@media screen and (min-width: 768px){
+    #mysr-form-form-el#mysr-form-form-el#mysr-form-form-el.mysr-form-moyasarForm.mysr-form-fixedWidth{
+        max-width: 75% !important;
+    }
+}
