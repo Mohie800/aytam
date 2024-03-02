@@ -332,10 +332,16 @@
           </div>
         </div>
         <div class="form-group">
-          <h6 class="text-lightGreen mt-3">نوع المساهمة</h6>
+          <div class="w-100 d-flex justify-content-between align-items-center">
+            <h6 class="text-lightGreen mt-3">نوع المساهمة</h6>
+            <div class="display-text fs-6 mt-3">يمكن اختيار أكثر من نوع</div>
+          </div>
           <div class="row">
             <div class="col-4 col-sm-3">
-              <div class="d-flex flex-column rounded-4 don-type gap-3 p-2">
+              <div
+                class="d-flex flex-column rounded-4 don-type gap-3 p-2"
+                id="type-container1"
+              >
                 <div class="green-check">
                   <input
                     class="form-check-input"
@@ -351,7 +357,10 @@
               </div>
             </div>
             <div class="col-4 col-sm-3">
-              <div class="d-flex flex-column rounded-4 don-type gap-3 p-2">
+              <div
+                class="d-flex flex-column rounded-4 don-type gap-3 p-2"
+                id="type-container2"
+              >
                 <div class="green-check">
                   <input
                     class="form-check-input"
@@ -367,7 +376,10 @@
               </div>
             </div>
             <div class="col-4 col-sm-3">
-              <div class="d-flex flex-column rounded-4 don-type gap-3 p-2">
+              <div
+                class="d-flex flex-column rounded-4 don-type gap-3 p-2"
+                id="type-container3"
+              >
                 <div class="green-check">
                   <input
                     class="form-check-input"
@@ -383,7 +395,10 @@
               </div>
             </div>
             <div class="col-4 col-sm-3">
-              <div class="d-flex flex-column rounded-4 don-type gap-3 p-2">
+              <div
+                class="d-flex flex-column rounded-4 don-type gap-3 p-2"
+                id="type-container4"
+              >
                 <div class="green-check">
                   <input
                     class="form-check-input"
@@ -403,7 +418,7 @@
         <div class="form-group mt-3">
           <h6 class="text-lightGreen mb-2">اختر طريقة التبرع</h6>
           <div class="row">
-            <div class="col-12 applePayContainer" style="display: block">
+            <div class="col-12 applePayContainer" style="display: none">
               <div class="custom-control custom-checkbox">
                 <input
                   type="radio"
@@ -498,9 +513,18 @@
     <script>
       const checkbox1 = $("#flexCheckDefault1");
       const container1 = $("#container1");
+      function toggleCheckboxState() {
+        checkbox1.prop("checked", !checkbox1.prop("checked")).change();
+      }
+
+      // Event listener for container click
+      container1.on("click", () => {
+        toggleCheckboxState();
+      });
+
+      // Event listener for checkbox change
       checkbox1.on("change", () => {
-        if (checkbox1[0].checked) {
-          console.log(checkbox1[0].checked);
+        if (checkbox1.prop("checked")) {
           container1.addClass("don-type-active");
         } else {
           container1.removeClass("don-type-active");
@@ -508,9 +532,18 @@
       });
       const checkbox2 = $("#flexCheckDefault2");
       const container2 = $("#container2");
+      function toggleCheckboxState2() {
+        checkbox2.prop("checked", !checkbox2.prop("checked")).change();
+      }
+
+      // Event listener for container click
+      container2.on("click", () => {
+        toggleCheckboxState2();
+      });
+
+      // Event listener for checkbox change
       checkbox2.on("change", () => {
-        if (checkbox2[0].checked) {
-          console.log(checkbox2[0].checked);
+        if (checkbox2.prop("checked")) {
           container2.addClass("don-type-active");
         } else {
           container2.removeClass("don-type-active");
@@ -518,13 +551,50 @@
       });
       const checkbox3 = $("#flexCheckDefault3");
       const container3 = $("#container3");
+      function toggleCheckboxState3() {
+        checkbox3.prop("checked", !checkbox3.prop("checked")).change();
+      }
+
+      // Event listener for container click
+      container3.on("click", () => {
+        toggleCheckboxState3();
+      });
+
+      // Event listener for checkbox change
       checkbox3.on("change", () => {
-        if (checkbox3[0].checked) {
-          console.log(checkbox3[0].checked);
+        if (checkbox3.prop("checked")) {
           container3.addClass("don-type-active");
         } else {
           container3.removeClass("don-type-active");
         }
+      });
+
+      //select contribution type
+      const containerType1 = $("#type-container1");
+      const containerType2 = $("#type-container2");
+      const containerType3 = $("#type-container3");
+      const containerType4 = $("#type-container4");
+
+      const type1 = $("#radioNoLabel1");
+      const type2 = $("#radioNoLabel2");
+      const type3 = $("#radioNoLabel3");
+      const type4 = $("#radioNoLabel4");
+
+      const select = (element) => {
+        element.prop("checked", true).change();
+      };
+      containerType1.on("click", () => {
+        select(type1);
+      });
+      containerType2.on("click", () => {
+        select(type2);
+      });
+      containerType3.on("click", () => {
+        select(type3);
+      });
+      containerType4.on("click", () => {
+        select(type4);
+        $(".applePayContainer").show();
       });
     </script>
   </body>
