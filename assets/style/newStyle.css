@@ -26,8 +26,12 @@ a {
   margin-bottom: 20px;
 }
 
+.font-s-11 {
+  font-size: 11px;
+}
+
 .title-text {
-  font-size: 24px;
+  font-size: 1rem;
   text-align: center;
   width: fit-content;
   margin-right: 10px;
@@ -37,7 +41,7 @@ a {
 
 .title-text::before {
   position: absolute;
-  bottom: 0px;
+  bottom: -5px;
   right: 0;
   content: "";
   width: 100%;
@@ -83,7 +87,7 @@ a {
 
 .don-type {
   box-shadow: 0px 0px 15px #00000029;
-  height: 105px;
+  height: 82px;
   margin-top: 10px;
 }
 
@@ -142,6 +146,11 @@ a {
   border: solid 1px #9bca41;
   overflow-x: auto;
   background-color: #fff;
+}
+
+.textWhite strong {
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 /* fix styles */
