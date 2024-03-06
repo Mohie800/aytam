@@ -2,6 +2,10 @@ a {
   color: #9bca41 !important;
 }
 
+h6 {
+  font-size: 0.8rem !important;
+}
+
 .shape-1 {
   width: 137px;
   height: 20px;
@@ -131,7 +135,7 @@ a {
 
 .display-text {
   color: #bdbdbd;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .display-box-top {
