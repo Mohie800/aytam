@@ -136,31 +136,22 @@
     <!-- header end -->
 
     <!-- start page -->
-    <div class="container container-top-space">
-      <div class="box-title title-center"></div>
+
+    <div class="bank-bg mt-5"></div>
+    <div class="container">
+      <div class="head-over">
+        <p class="mt-2 text-size-13">
+          حصالة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
+          وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
+          الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
+          الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو معيليهم
+        </p>
+      </div>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-sm-3 box-home-bg rounded-4 h-60">
-          <div class="d-flex flex-column justify-content-center h-100">
-            <div class="text-light card-text">
-              حصالة
-              <div class="text-lightGreen">العائلة - 1</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-12">
-          <div class="title-text text-lightGreen">حصالة الإحسان</div>
-        </div>
-        <div class="col-12">
-          <p class="mt-2 text-size-13">
-            حصالة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
-            وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
-            الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية
-            والمؤسسات الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو
-            معيليهم
-          </p>
-        </div>
+        <div class="col-12"></div>
+        <div class="col-12"></div>
         <div class="col-12">
           <div class="d-flex rounded-4 details-box justify-content-between p-3">
             <div style="width: 50px; position: relative">
@@ -215,7 +206,9 @@
           <div class="form-group mb-2 mt-3">
             <h6 class="text-lightGreen">نوع المساهمة</h6>
             <div class="col-12 col-sm-3">
-              <div class="d-flex flex-column rounded-4 don-type gap-3 p-2 mt-2">
+              <div
+                class="d-flex flex-column rounded-4 don-type don-type-active gap-3 p-2 mt-2"
+              >
                 <div class="green-check text-size-13">يوميًا</div>
                 <div class="text-lightGreen font-s-11">10 ر.س يوميا</div>
               </div>
@@ -228,7 +221,7 @@
             <div class="form-group mt-2 mb-3" id="shown-input">
               <input
                 type="number"
-                class="form-control font-s-11"
+                class="form-control font-s-11 rounded-4 bg-light"
                 id="customCheck3"
                 name="amount"
                 data-share-type="family"
@@ -338,28 +331,29 @@
             شارك الحصالة
           </button>
         </div>
-        <div class="col-12 goPayContainer mt-3">
-          <button
-            type="submit"
-            class="btn btn-filled w-100 goPay"
-            fdprocessedid="lah1ql"
-          >
-            إيقاف مؤقت
-          </button>
+        <div class="col-12">
+          <div class="form-group mb-1 mt-4">
+            <h6 class="text-lightGreen">إدارة الحصالة</h6>
+          </div>
         </div>
-        <div class="col-12 goPayContainer mt-3 mb-5">
+        <div class="col-6 goPayContainer mt-2">
           <button
-            type="submit"
-            class="btn btn-filled w-100 goPay"
-            fdprocessedid="lah1ql"
+            type="button"
+            class="btn btn-filled w-100 goPay share-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#modal"
           >
             إغلاق الحصالة
+          </button>
+        </div>
+        <div class="col-6 goPayContainer mt-2 mb-3">
+          <button type="submit" class="btn btn-filled w-100 goPay share-btn">
+            إيقاف مؤقت
           </button>
         </div>
       </div>
     </div>
     <!-- Modal -->
-
     <div
       class="modal fade"
       id="exampleModal"
@@ -418,6 +412,59 @@
                   <img src="assets/Vector (2).png" alt="snap" />
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="modal"
+      tabindex="-1"
+      aria-labelledby="colseModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+            <h5 class="modal-title" id="exampleModalLabel">إغلاق الحصالة</h5>
+          </div>
+          <div class="modal-body">
+            <h6 class="blue font-weight-bold">
+              دفع المبلغ المتبقي لإغلاق الحصالة
+            </h6>
+            <div class="d-flex justify-content-between my-2 mt-4">
+              <h6 class="blue">المتبقي</h6>
+              <h6 class="text-lightGreen">150 ر.س</h6>
+            </div>
+            <div class="d-flex justify-content-between my-2">
+              <h6 class="display-text font-s-11">نسبة التغطية</h6>
+              <h6 class="blue font-s-11">450000 ر.س</h6>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar progress-bg"
+                role="progressbar"
+                style="width: 25%"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                25%
+              </div>
+            </div>
+            <div class="col-12 goPayContainer mt-3">
+              <button type="button" class="btn btn-filled w-100 goPay py-2">
+                دفع المبلغ المتبقي
+              </button>
             </div>
           </div>
         </div>

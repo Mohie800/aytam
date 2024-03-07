@@ -136,9 +136,10 @@
     <!-- header end -->
 
     <!-- start page -->
-    <div class="container container-top-space">
-      <div class="box-title title-center">
-        <div class="title-text text-lightGreen" data-aos="zoom-in-up">
+    <div class="bank-bg mt-5"></div>
+    <div class="container">
+      <div class="head-over">
+        <div class="title-text text-lightGreen mt-1" data-aos="zoom-in-up">
           أنشئ حصالتك الرمضانية
         </div>
       </div>
@@ -246,7 +247,7 @@
               <div class="form-group mt-2 mb-3" id="shown-input">
                 <input
                   type="number"
-                  class="form-control font-s-11"
+                  class="form-control rounded-4 bg-light font-s-11"
                   id="customCheck3"
                   name="amount"
                   data-share-type="family"
@@ -276,7 +277,7 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-12 col-sm-6 d-flex justify-content-center">
+                  <div class="col-12 d-flex justify-content-center">
                     <img
                       src="assets/mingcute_building-1-fill.svg"
                       style="color: aqua"
@@ -284,7 +285,7 @@
                       width="29"
                     />
                   </div>
-                  <div class="col-12 col-sm-6">
+                  <div class="col-12">
                     <div class="font-s-11 text-center">وقف</div>
                   </div>
                 </div>
@@ -302,11 +303,11 @@
                 </div>
                 <div class="row">
                   <div
-                    class="col-12 col-sm-6 d-flex justify-content-center align-items-center"
+                    class="col-12 d-flex justify-content-center align-items-center"
                   >
                     <img src="assets/Group (1).png" alt="icon" height="28" />
                   </div>
-                  <div class="col-12 col-sm-6">
+                  <div class="col-12">
                     <div class="font-s-11 text-center">صدقة</div>
                   </div>
                 </div>
@@ -324,10 +325,10 @@
                 </div>
 
                 <div class="row">
-                  <div class="col-12 col-sm-6 d-flex justify-content-center">
+                  <div class="col-12 d-flex justify-content-center">
                     <img src="assets/Group (2).png" alt="icon" height="28" />
                   </div>
-                  <div class="col-12 col-sm-6">
+                  <div class="col-12">
                     <div class="font-s-11 text-center">كفالة يتيم</div>
                   </div>
                 </div>
@@ -382,7 +383,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-4 col-sm-3">
+            <div class="col-4 col-sm-3" style="display: none" id="monthly">
               <div
                 class="d-flex flex-column rounded-4 don-type gap-3 p-2 align-items-center"
                 id="type-container3"
@@ -611,6 +612,17 @@
       containerType4.on("click", () => {
         select(type4);
         $(".applePayContainer").show();
+      });
+
+      //hide monthly
+      const customCheck5 = $("#customCheck5");
+      const customCheck4 = $("#customCheck4");
+      const monthly = $("#monthly");
+      customCheck5.on("change", () => {
+        monthly.show();
+      });
+      customCheck4.on("change", () => {
+        monthly.hide();
       });
     </script>
 

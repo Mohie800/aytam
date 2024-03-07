@@ -6,6 +6,13 @@ h6 {
   font-size: 0.8rem !important;
 }
 
+.bank-bg {
+  background-image: url("../background.png");
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
 .shape-1 {
   width: 137px;
   height: 20px;
@@ -117,6 +124,13 @@ h6 {
   box-shadow: none;
 }
 
+.head-over {
+  margin-top: -40px;
+  background-color: #fff;
+  border-radius: 20px 20px 0 0;
+  padding: 10px 10px 20px 10px;
+}
+
 .text-size-13 {
   font-size: 13px;
 }
@@ -144,6 +158,10 @@ h6 {
 
 .display-box-top {
   border-bottom: 1px solid #efefef;
+}
+
+.progress-bg {
+  background-color: #9bca41 !important;
 }
 
 .share-btn {
