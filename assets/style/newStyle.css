@@ -143,6 +143,10 @@ h6 {
   color: #18193d;
 }
 
+.blueLight {
+  color: #23283fb2;
+}
+
 .custom-control-input:checked ~ .textWhite {
   color: #f0f0f0;
 }
@@ -210,4 +214,95 @@ h6 {
 /* rating */
 .star-rating .star {
   filter: brightness(0.9);
+}
+
+/* days */
+.weekly-new .custom-control label {
+  border-radius: 100px;
+  min-width: 100px;
+  border: 1px solid #9bca41;
+  font-size: 14px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  color: #303030;
+}
+.weekly-new .custom-control-input:checked ~ .custom-control-label {
+  color: #fff;
+}
+.monthly-new .custom-control label {
+  background-color: transparent;
+  box-shadow: none;
+  width: 50px;
+  height: 30px;
+  margin-left: 20px;
+  background-color: transparent;
+  box-shadow: none;
+  width: 50px;
+  display: flex;
+  align-items: center;
+}
+.monthly-new .custom-control-input:checked ~ .custom-control-label {
+  border-radius: 50%;
+  color: #fff;
+}
+
+/* discription */
+.description-container {
+  display: flex;
+}
+.description-border {
+  background-image: linear-gradient(#9bca41, #9bca41),
+    linear-gradient(#9bca41, #9bca41), linear-gradient(#9bca41, #9bca41),
+    linear-gradient(#9bca41, #9bca41), linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  background-size: 1px 50%, 50% 1px, 1px 50%, 50% 1px,
+    calc(100% - 8px) calc(100% - 8px);
+  background-position: left bottom, left bottom, right top, right top, 1px 1px;
+  border-radius: 18px;
+  padding: 5px;
+}
+
+.description-body {
+  padding: 10px;
+  background-color: #e8e8e8;
+  border-radius: 18px;
+}
+
+/* table */
+.table-container {
+  border: solid 1px #e8e8e8;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.bg-blue {
+  background-color: #23283f !important;
+}
+
+.border-container {
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+  border-radius: 18px 18px 0 0;
+  width: 95% !important;
+}
+.blueLight {
+  color: #23283fb2;
+}
+.drop-shape {
+  background-color: #9bca41;
+  width: max-content;
+  border-radius: 12px 12px 12px 0;
+}
+
+/* accordion */
+.faq .card-header {
+  border-radius: 11px !important;
+  width: 100%;
+  margin-top: -7px;
+}
+
+.faq {
+  border-radius: 11px !important;
+  background-color: #e4e4e4 !important;
+  width: 100%;
 }

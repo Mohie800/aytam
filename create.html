@@ -14,16 +14,12 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -145,7 +141,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row pb-5">
         <div class="col-12">
           <p class="text-size-13">
             حصالة من الخير تملؤها أنت، أو بمشاركة من تحب، ليكون الهدف تحقيق
@@ -426,6 +422,389 @@
               </div>
             </div>
           </div>
+          <div
+            class="form-group days-container weekly weekly-new"
+            id="days_container"
+            name="days_container"
+            style="display: block"
+          >
+            <h6 class="text-muted mt-3">ما هو اليوم المفضل لاستقطاعك؟</h6>
+            <div class="days">
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Saturday"
+                  name="day"
+                  value="Saturday"
+                />
+                <label class="custom-control-label" for="Saturday">
+                  السبت
+                </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Sunday"
+                  name="day"
+                  value="Sunday"
+                />
+                <label class="custom-control-label" for="Sunday"> الاحد </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Monday"
+                  name="day"
+                  value="Monday"
+                />
+                <label class="custom-control-label" for="Monday">
+                  الاثنين
+                </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Tuesday"
+                  name="day"
+                  value="Tuesday"
+                />
+                <label class="custom-control-label" for="Tuesday">
+                  الثلاثاء
+                </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Wednesday"
+                  name="day"
+                  value="Wednesday"
+                />
+                <label class="custom-control-label" for="Wednesday">
+                  الاربعاء
+                </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Thursday"
+                  name="day"
+                  value="Thursday"
+                />
+                <label class="custom-control-label" for="Thursday">
+                  الخميس
+                </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="Friday"
+                  name="day"
+                  value="Friday"
+                />
+                <label class="custom-control-label" for="Friday">
+                  الجمعة
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="form-group monthly monthly-new"
+            id="month_days_container"
+            name="month_days_container"
+            style="display: block"
+          >
+            <h6 class="text-muted mt-3">ما هو اليوم المفضل لاستقطاعك؟</h6>
+            <div class="days">
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_1"
+                  name="day_number"
+                  value="1"
+                />
+                <label class="custom-control-label" for="day_1"> 1 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_2"
+                  name="day_number"
+                  value="2"
+                />
+                <label class="custom-control-label" for="day_2"> 2 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_3"
+                  name="day_number"
+                  value="3"
+                />
+                <label class="custom-control-label" for="day_3"> 3 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_4"
+                  name="day_number"
+                  value="4"
+                />
+                <label class="custom-control-label" for="day_4"> 4 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_5"
+                  name="day_number"
+                  value="5"
+                />
+                <label class="custom-control-label" for="day_5"> 5 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_6"
+                  name="day_number"
+                  value="6"
+                />
+                <label class="custom-control-label" for="day_6"> 6 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_7"
+                  name="day_number"
+                  value="7"
+                />
+                <label class="custom-control-label" for="day_7"> 7 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_8"
+                  name="day_number"
+                  value="8"
+                />
+                <label class="custom-control-label" for="day_8"> 8 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_9"
+                  name="day_number"
+                  value="9"
+                />
+                <label class="custom-control-label" for="day_9"> 9 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_10"
+                  name="day_number"
+                  value="10"
+                />
+                <label class="custom-control-label" for="day_10"> 10 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_11"
+                  name="day_number"
+                  value="11"
+                />
+                <label class="custom-control-label" for="day_11"> 11 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_12"
+                  name="day_number"
+                  value="12"
+                />
+                <label class="custom-control-label" for="day_12"> 12 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_13"
+                  name="day_number"
+                  value="13"
+                />
+                <label class="custom-control-label" for="day_13"> 13 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_14"
+                  name="day_number"
+                  value="14"
+                />
+                <label class="custom-control-label" for="day_14"> 14 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_15"
+                  name="day_number"
+                  value="15"
+                />
+                <label class="custom-control-label" for="day_15"> 15 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_16"
+                  name="day_number"
+                  value="16"
+                />
+                <label class="custom-control-label" for="day_16"> 16 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_17"
+                  name="day_number"
+                  value="17"
+                />
+                <label class="custom-control-label" for="day_17"> 17 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_18"
+                  name="day_number"
+                  value="18"
+                />
+                <label class="custom-control-label" for="day_18"> 18 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_19"
+                  name="day_number"
+                  value="19"
+                />
+                <label class="custom-control-label" for="day_19"> 19 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_20"
+                  name="day_number"
+                  value="20"
+                />
+                <label class="custom-control-label" for="day_20"> 20 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_21"
+                  name="day_number"
+                  value="21"
+                />
+                <label class="custom-control-label" for="day_21"> 21 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_22"
+                  name="day_number"
+                  value="22"
+                />
+                <label class="custom-control-label" for="day_22"> 22 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_23"
+                  name="day_number"
+                  value="23"
+                />
+                <label class="custom-control-label" for="day_23"> 23 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_24"
+                  name="day_number"
+                  value="24"
+                />
+                <label class="custom-control-label" for="day_24"> 24 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_25"
+                  name="day_number"
+                  value="25"
+                />
+                <label class="custom-control-label" for="day_25"> 25 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_26"
+                  name="day_number"
+                  value="26"
+                />
+                <label class="custom-control-label" for="day_26"> 26 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_27"
+                  name="day_number"
+                  value="27"
+                />
+                <label class="custom-control-label" for="day_27"> 27 </label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="day_28"
+                  name="day_number"
+                  value="28"
+                />
+                <label class="custom-control-label" for="day_28"> 28 </label>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="form-group mt-3">
           <h6 class="text-lightGreen mb-2">اختر طريقة التبرع</h6>
@@ -521,10 +900,281 @@
             سيتم إنشاء الحصالة تلقائيا فور تبرعك
           </p>
         </div>
+        <div class="description-container" data-aos="fade-right">
+          <div class="description-border">
+            <div class="description-body">
+              <h6 class="text-lightGreen">وصف المشروع</h6>
+              <p class="font-s-11">
+                لأننا نعرف حبك للخير، سهلنا عليك التبرع الدوري طيلة أيام شهر
+                رمضان المبارك، من خلال توفير حصالة إلكترونية تحدد فيها هدفاً لك
+                طيلة أيام الشهر وتسعى لتحقيقه، ولاتنسى أنك تستطيع عمل حصالة
+                جماعية لتحقيق هدفك أنت ومن تحب.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="border-container mx-2 my-4">
+          <div
+            class="d-flex justify-content-center flex-column align-items-center"
+          >
+            <div
+              class="title-text text-lightGreen mt-4 mb-2"
+              data-aos="zoom-in-up"
+            >
+              بدأوا رحلة الإدخار للآخرة
+            </div>
+            <p class="blueLight mt-2">الحصالات التي بدأت حديثا</p>
+          </div>
+          <!-- table start -->
+          <div>
+            <div class="table-container p-0 m-0">
+              <table class="table">
+                <thead class="bg-blue">
+                  <tr>
+                    <th scope="col" class="bg-blue">
+                      <div class="text-lightGreen font-s-11">اسم الحصالة</div>
+                    </th>
+                    <th scope="col" class="bg-blue">
+                      <div class="text-lightGreen font-s-11">الهدف</div>
+                    </th>
+                    <th scope="col" class="bg-blue">
+                      <div class="text-lightGreen font-s-11">المتبقي</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">300 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة الخير</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">800 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">150 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">300 ر.س</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- table end -->
+          </div>
+        </div>
+        <div class="border-container mx-2 my-4">
+          <div
+            class="d-flex justify-content-center flex-column align-items-center"
+          >
+            <div
+              class="title-text text-lightGreen mt-4 mb-2"
+              data-aos="zoom-in-up"
+            >
+              سبقو الى الاخرة
+            </div>
+            <p class="blueLight mt-2">الحصالات المكتملة</p>
+          </div>
+          <!-- table start -->
+          <div>
+            <div class="table-container p-0 m-0">
+              <table class="table">
+                <thead class="bg-blue">
+                  <tr>
+                    <th scope="col" class="bg-blue">
+                      <div class="text-lightGreen font-s-11">اسم الحصالة</div>
+                    </th>
+                    <th scope="col" class="bg-blue">
+                      <div class="text-lightGreen font-s-11">الهدف المحقق</div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة الخير</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">1200 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">3000 ر.س</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="blue font-s-11">حصالة العائلة</div>
+                    </td>
+                    <td>
+                      <div class="text-lightGreen font-s-11">80000 ر.س</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- table end -->
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="bg-blue rounded-4 p-2">
+            <div class="drop-shape mb-3 p-2" data-aos="fade-up-left">
+              <h6 class="text-light m-0">آلية المساهمة</h6>
+            </div>
+            <p class="text-light font-s-11" data-aos="fade-up-right">
+              يمكنك المساهمة في الحصالة بشكل سهل وآمن عبر عدة طرق موثوقة،
+              بإمكانك الدفع عبر أبل باي، من خلال استخدام متصفح سفاري على أجهزة
+              الآيفون. <br />
+              كما يمكنك المساهمة من خلال الاستقطاع اليومي أو الأسبوعي، والذي
+              تستطيع إيقافه في أي وقت.. بسهولة ويسر. <br />
+              كما تستطيع المساهمة عبر تحويل بنكي مباشر لحسابات الجمعية الرسمية
+              وإرفاق صورة الإيصال ليصلك إيصال مشاركتك في الفرصة. <br />
+              أيضاً يمكنك المشاركة عبرإدخالك لمعلومات بطاقاتك البنكية عبر نظامنا
+              الآمن، والمزود بأحدث الخبرات السيبرانية، مع التأكيد على أن بياناتك
+              لايطلع عليها سوى البنك المركزي السعودي عبر بوابته (ميسر).
+            </p>
+          </div>
+        </div>
+        <div class="col-12 mb-5">
+          <div
+            class="d-flex justify-content-center flex-column align-items-center"
+          >
+            <div
+              class="title-text text-lightGreen mt-4 mb-2"
+              data-aos="zoom-in-up"
+            >
+              الأسئلة المكررة
+            </div>
+            <div class="mt-3 w-100" id="accordion">
+              <div class="card faq" data-aos="fade-left">
+                <div
+                  class="card-header collapsed"
+                  data-bs-toggle="collapse"
+                  href="#collapseOne"
+                  aria-expanded="true"
+                >
+                  <p>هل يمكنني التعديل على هدف الحصالة؟</p>
+                  <i class="fas fa-minus" aria-hidden="true"></i>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body">
+                    <p>
+                      تستطيع التعديل في أي وقت على هدف الحصالة بالزيادة أو النقص
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card faq" data-aos="fade-right">
+                <div
+                  class="card-header collapsed"
+                  data-bs-toggle="collapse"
+                  href="#collapseTow"
+                  aria-expanded="true"
+                >
+                  <p>متى ينتهي مشروع الحصالة الخيرية؟</p>
+                  <i class="fas fa-minus" aria-hidden="true"></i>
+                </div>
+                <div
+                  id="collapseTow"
+                  class="collapse show"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body">
+                    <p>
+                      ستبقى حصالتك مفتوحة منذ افتتاحك لها، وحتى اكتمال أيام شهر
+                      رمضان المبارك.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card faq" data-aos="fade-left">
+                <div
+                  class="card-header collapsed"
+                  data-bs-toggle="collapse"
+                  href="#collapseTow"
+                  aria-expanded="true"
+                >
+                  <p>
+                    ستذهب النقود إلى المشروع الذي اخترته في بداية إنشائك للحصالة
+                    (وقف - كفالة - ….)
+                  </p>
+                  <i class="fas fa-minus" aria-hidden="true"></i>
+                </div>
+                <div
+                  id="collapseTow"
+                  class="collapse show"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body">
+                    <p>
+                      تستطيع التعديل في أي وقت على هدف الحصالة بالزيادة أو النقص
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- end page -->
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
@@ -630,7 +1280,7 @@
     <script>
       AOS.init({
         easing: "ease-out-back",
-        duration: 1000,
+        duration: 800,
       });
     </script>
   </body>
