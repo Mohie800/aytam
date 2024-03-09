@@ -40,6 +40,15 @@ h6 {
 .font-s-11 {
   font-size: 11px !important;
 }
+.font-s-14 {
+  font-size: 14px !important;
+}
+.font-s-18 {
+  font-size: 18px !important;
+}
+.font-s-22 {
+  font-size: 22px !important;
+}
 
 .title-text {
   font-size: 1rem;
