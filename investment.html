@@ -143,7 +143,7 @@
       </h6>
     </div>
     <div class="inv-card-container" id="card-target"></div>
-    <div class="container">
+    <div class="container d-none-sm">
       <div class="text-lightGreen font-s-11 my-3">17-03-2024</div>
       <p class="font-s-14 display-box-top pb-2">
         المحفظة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
@@ -446,12 +446,12 @@
           let left = $(this).offset().left;
 
           if (left > -50 && left < window.innerWidth - 100) {
-            $(this).addClass("mvisible");
+            // $(this).addClass("mvisible");
             // console.log($(elem).data());
             stockValue.text($(elem).data().value);
           } else {
             if ($(this).hasClass("mvisible")) {
-              $(this).removeClass("mvisible");
+              // $(this).removeClass("mvisible");
             }
           }
         });
