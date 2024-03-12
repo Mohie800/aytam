@@ -143,9 +143,9 @@
       </h6>
     </div>
     <div class="inv-card-container" id="card-target"></div>
-    <div class="container d-none-sm">
+    <div class="container d-sm-none">
       <div class="text-lightGreen font-s-11 my-3">17-03-2024</div>
-      <p class="font-s-14 display-box-top pb-2">
+      <p class="font-s-14 display-box-top pb-2" id="text-container">
         المحفظة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
         وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
         الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
@@ -154,11 +154,11 @@
       <h6 class="blue font-weight-bold">المساهمة الحالية</h6>
       <div class="d-flex justify-content-between my-2 mt-4">
         <h6 class="blue">إجمالي المساهمات</h6>
-        <h6 class="text-lightGreen">150 ر.س</h6>
+        <h6 class="text-lightGreen" id="covered">150 ر.س</h6>
       </div>
       <div class="d-flex justify-content-between my-2">
         <h6 class="display-text font-s-11">نسبة التغطية</h6>
-        <h6 class="blue font-s-11">450000 ر.س</h6>
+        <h6 class="blue font-s-11" id="total">450000 ر.س</h6>
       </div>
       <div class="progress">
         <div
@@ -168,6 +168,7 @@
           aria-valuenow="25"
           aria-valuemin="0"
           aria-valuemax="100"
+          id="percentage"
         >
           25%
         </div>
@@ -343,9 +344,37 @@
     <!-- dinamic script -->
     <script>
       const data = [
-        { name: "تعليم الأكادمية1", id: 1, value: 40 },
-        { name: "تعليم الأكادمية2", id: 2, value: 50 },
-        { name: "تعليم الأكادمية3", id: 3, value: 60 },
+        {
+          name: "تعليم الأكادمية",
+          id: 1,
+          value: 40,
+          total: 450000,
+          covered: 150000,
+          percentage: "33%",
+          text: ` المحفظة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
+        وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
+        الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
+        الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو معيليهم`,
+        },
+        {
+          name: "استثمار مفتوح",
+          id: 2,
+          value: 50,
+          total: 500000,
+          covered: 250000,
+          percentage: "50%",
+          text: `هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
+إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، `,
+        },
+        {
+          name: "فرصة استثمارية",
+          id: 3,
+          value: 60,
+          total: "600000",
+          covered: "100000",
+          percentage: "16%",
+          text: `ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النص العربى أن يوفر على المصمم عناء البحث عن نص بديل لا علاقة له بالموضوع الذى يتحدث عنه التصميم فيظهر بشكل لا يليق.`,
+        },
       ];
       let stockValue = $("#stock-value");
 
@@ -397,28 +426,28 @@
             <div
               class="bg-lightBlue d-flex gap-1 rounded-1 text-lightGreen font-s-11 px-2 py-1"
             >
-              <strong>40</strong>
+              <strong>${item.value}</strong>
               ر.س
             </div>
           </div>
           <div class="d-flex justify-content-between my-2 mt-4">
             <h6 class="blue">إجمالي المساهمات</h6>
-            <h6 class="text-lightGreen">150 ر.س</h6>
+            <h6 class="text-lightGreen">${item.covered} ر.س</h6>
           </div>
           <div class="d-flex justify-content-between my-2">
             <h6 class="display-text font-s-11">نسبة التغطية</h6>
-            <h6 class="blue font-s-11">450000 ر.س</h6>
+            <h6 class="blue font-s-11">${item.total} ر.س</h6>
           </div>
           <div class="progress">
             <div
               class="progress-bar progress-bg"
               role="progressbar"
-              style="width: 25%"
-              aria-valuenow="25"
+              style="width: ${item.percentage}"
+              aria-valuenow="${item.percentage}"
               aria-valuemin="0"
               aria-valuemax="100"
             >
-              25%
+            ${item.percentage}
             </div>
           </div>
         </div>
@@ -441,14 +470,22 @@
       //   console.log(e.currentTarget.scrollWidth);
       // });
 
+      const total = $("#total");
+      const covered = $("#covered");
+      const textContainer = $("#text-container");
+      const percentage = $("#percentage");
       cardContainer.on("scroll", function () {
         $("#card-target .inv-card").each(function (i, elem) {
           let left = $(this).offset().left;
 
           if (left > -50 && left < window.innerWidth - 100) {
             // $(this).addClass("mvisible");
-            console.log($(elem).data());
-            stockValue.text($(elem).data().value);
+            total.text(`${$(elem).data().total} ر.س`);
+            covered.text(`${$(elem).data().covered} ر.س`);
+            percentage.css({ width: $(elem).data().percentage });
+            percentage.text($(elem).data().percentage);
+            textContainer.text($(elem).data().text);
+            stockValue.text(`${$(elem).data().value} ر.س`);
           } else {
             if ($(this).hasClass("mvisible")) {
               // $(this).removeClass("mvisible");
