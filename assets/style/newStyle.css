@@ -452,3 +452,21 @@ h6 {
 .border-green {
   border: 1px solid #9bca41 !important;
 }
+
+.w-254 {
+  width: 254px;
+}
+
+.inv-coming-image {
+  position: absolute;
+  z-index: 99;
+  translate: -50%;
+  top: 22%;
+  right: 6%;
+}
+
+.inv-outline-btn {
+  color: #184276 !important;
+  border: 1px solid #18427666 !important;
+  font-size: 14px !important;
+}

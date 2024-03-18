@@ -151,6 +151,11 @@
         الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
         الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو معيليهم
       </p>
+      <button type="button" class="btn inv-outline-btn py-2">
+        عرض ملف الفرصة<i
+          class="fa-regular fa-file-pdf me-2 text-lightGreen"
+        ></i>
+      </button>
       <div class="display-box-top my-3"></div>
       <div class="d-flex justify-content-between my-2 mt-4">
         <h6 class="blue font-weight-bold">شراء أسهم</h6>
@@ -373,7 +378,7 @@
       const cardContainer = $("#card-target");
       data.map((item) => {
         const card = $(`
-        <div class="inv-card rounded-4" id=${item.id}></div>
+        <div class="inv-card rounded-4 position-relative" id=${item.id}></div>
         `);
         card.data({ ...item });
         const upperCard = $(`
@@ -408,7 +413,11 @@
         `);
         const lowerCard = $(`
         <div class="inv-lower-card px-2 py-1">
-          ${item.isComing ? `<div class="inv-coming"></div>` : ""}
+          ${
+            item.isComing
+              ? `<div class="inv-coming"></div><img src="assets/investment_images/coming.png" alt="قادمة" class="inv-coming-image"/>`
+              : ""
+          }
           <div
             class="mx-2 display-box-top d-flex justify-content-center align-items-center py-3 gap-2"
           >
@@ -447,8 +456,8 @@
             ? ` <button type="button" class="btn w-100 py-2 mt-3 border-green">
               <img src="assets/investment_images/completed.svg" alt="مكتملة" />
             </button>`
-            : ` <button type="button" class="btn w-100 py-3 bg-lightBlue mt-3">
-              <div class="text-lightGreen font-s-14">سجل إهتمامك</div>
+            : ` <button type="button" class="btn py-3 bg-lightBlue mt-3 position-absolute w-254">
+              <div class="text-lightGreen font-s-14">استثمر الآن</div>
             </button>`
         }
            
