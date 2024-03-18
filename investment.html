@@ -342,9 +342,9 @@
           covered: 450000,
           percentage: "100%",
           text: ` المحفظة الغرض منها هي توفير الرعاية والدعم المالي للأيتام. تعد حصالة
-        وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
-        الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
-        الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو معيليهم`,
+              وسيلة لجمع التبرعات والأموال من الجمهور والمؤسسات لتلبية احتياجات
+              الأيتام في المجتمع. تستخدم الحصالات عادة في الجمعيات الخيرية والمؤسسات
+              الاجتماعية التي تهتم برعاية الأيتام الذين فقدوا آبائهم أو معيليهم`,
           isCompleted: true,
         },
         {
@@ -355,7 +355,7 @@
           covered: 250000,
           percentage: "50%",
           text: `هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق.
-إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، `,
+      إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، `,
         },
         {
           name: "فرصة استثمارية",
@@ -378,90 +378,90 @@
       const cardContainer = $("#card-target");
       data.map((item) => {
         const card = $(`
-        <div class="inv-card rounded-4 position-relative" id=${item.id}></div>
-        `);
+              <div class="inv-card rounded-4 position-relative" id=${item.id}></div>
+              `);
         card.data({ ...item });
         const upperCard = $(`
-        <div class="inv-upper-card px-2 py-1">
-          <div class="inv-date d-flex align-items-center p-2 gap-1">
-            <div class="circle"></div>
-            <div class="text-lightGreen font-s-11">${
-              item.isCompleted ? "مكتملة" : "متاحة حتى :2024-3-22"
-            }</div>
-          </div>
-          <div class="mt-3 px-2 py-1 rounded-1 bg-lightGreen text-light w-max">
-            ${item.name}
-          </div>
-          <p class="font-s-11 mt-2 inv-card-text">
-            تمكين أبنائنا الأيتام من النزول لسوق العمل ودعمهم إغاثيا واجتماعيا .
-          </p>
-          <div class="d-flex">
-            <div class="inv-border px-3 d-flex flex-column align-items-center">
-              <h6 class="text-lightGreen">5 أيام</h6>
-              <h6 class="text-light font-s-9 text-center">مدة الفرصة</h6>
-            </div>
-            <div class="inv-border px-3 d-flex flex-column align-items-center">
-              <h6 class="text-lightGreen">85%</h6>
-              <h6 class="text-light font-s-9 text-center">العائد المتوقع</h6>
-            </div>
-            <div class="px-3 d-flex flex-column align-items-center">
-              <h6 class="text-lightGreen">22082</h6>
-              <h6 class="text-light font-s-9 text-center">المستفيدين</h6>
-            </div>
-          </div>
-        </div>
-        `);
+              <div class="inv-upper-card px-2 py-1">
+                <div class="inv-date d-flex align-items-center p-2 gap-1">
+                  <div class="circle"></div>
+                  <div class="text-lightGreen font-s-11">${
+                    item.isCompleted ? "مكتملة" : "متاحة حتى :2024-3-22"
+                  }</div>
+                </div>
+                <div class="mt-3 px-2 py-1 rounded-1 bg-lightGreen text-light w-max">
+                  ${item.name}
+                </div>
+                <p class="font-s-11 mt-2 inv-card-text">
+                  تمكين أبنائنا الأيتام من النزول لسوق العمل ودعمهم إغاثيا واجتماعيا .
+                </p>
+                <div class="d-flex">
+                  <div class="inv-border px-3 d-flex flex-column align-items-center">
+                    <h6 class="text-lightGreen">5 أيام</h6>
+                    <h6 class="text-light font-s-9 text-center">مدة الفرصة</h6>
+                  </div>
+                  <div class="inv-border px-3 d-flex flex-column align-items-center">
+                    <h6 class="text-lightGreen">85%</h6>
+                    <h6 class="text-light font-s-9 text-center">العائد المتوقع</h6>
+                  </div>
+                  <div class="px-3 d-flex flex-column align-items-center">
+                    <h6 class="text-lightGreen">22082</h6>
+                    <h6 class="text-light font-s-9 text-center">المستفيدين</h6>
+                  </div>
+                </div>
+              </div>
+              `);
         const lowerCard = $(`
-        <div class="inv-lower-card px-2 py-1">
-          ${
-            item.isComing
-              ? `<div class="inv-coming"></div><img src="assets/investment_images/coming.png" alt="قادمة" class="inv-coming-image"/>`
-              : ""
-          }
-          <div
-            class="mx-2 display-box-top d-flex justify-content-center align-items-center py-3 gap-2"
-          >
-            <div class="font-s-11">قيمة السهم</div>
-            <div
-              class="bg-lightBlue d-flex gap-1 rounded-1 text-lightGreen font-s-11 px-2 py-1"
-            >
-              <strong>${item.value}</strong>
-              ر.س
-            </div>
-          </div>
-          <div class="d-flex justify-content-between my-2 mt-4">
-            <h6 class="blue">إجمالي القيمة المطروحة</h6>
-            <h6 class="text-lightGreen">${item.covered} ر.س</h6>
-          </div>
-          <div class="d-flex justify-content-between my-2">
-            <h6 class="display-text font-s-11">نسبة التغطية</h6>
-            <h6 class="blue font-s-11">${item.total} ر.س</h6>
-          </div>
-          <div class="progress">
-            <div
-              class="progress-bar progress-bg"
-              role="progressbar"
-              style="width: ${item.percentage}"
-              aria-valuenow="${item.percentage}"
-              aria-valuemin="0"
-              aria-valuemax="100"
-            >
-            ${item.percentage}
-            </div>
-          </div>
-        </div>
-        `);
+              <div class="inv-lower-card px-2 py-1">
+                ${
+                  item.isComing
+                    ? `<div class="inv-coming"></div><img src="assets/investment_images/coming.png" alt="قادمة" class="inv-coming-image"/>`
+                    : ""
+                }
+                <div
+                  class="mx-2 display-box-top d-flex justify-content-center align-items-center py-3 gap-2"
+                >
+                  <div class="font-s-11">قيمة السهم</div>
+                  <div
+                    class="bg-lightBlue d-flex gap-1 rounded-1 text-lightGreen font-s-11 px-2 py-1"
+                  >
+                    <strong>${item.value}</strong>
+                    ر.س
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between my-2 mt-4">
+                  <h6 class="blue">إجمالي القيمة المطروحة</h6>
+                  <h6 class="text-lightGreen">${item.covered} ر.س</h6>
+                </div>
+                <div class="d-flex justify-content-between my-2">
+                  <h6 class="display-text font-s-11">نسبة التغطية</h6>
+                  <h6 class="blue font-s-11">${item.total} ر.س</h6>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar progress-bg"
+                    role="progressbar"
+                    style="width: ${item.percentage}"
+                    aria-valuenow="${item.percentage}"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                  ${item.percentage}
+                  </div>
+                </div>
+              </div>
+              `);
         const investButton = $(`${
           item.isCompleted
             ? ` <button type="button" class="btn w-100 py-2 mt-3 border-green">
-              <img src="assets/investment_images/completed.svg" alt="مكتملة" />
-            </button>`
+                    <img src="assets/investment_images/completed.svg" alt="مكتملة" />
+                  </button>`
             : ` <button type="button" class="btn py-3 bg-lightBlue mt-3 position-absolute w-254">
-              <div class="text-lightGreen font-s-14">استثمر الآن</div>
-            </button>`
+                    <div class="text-lightGreen font-s-14">استثمر الآن</div>
+                  </button>`
         }
-           
-        `);
+
+              `);
         lowerCard.append(investButton);
         card.append(upperCard);
         card.append(lowerCard);
@@ -478,13 +478,12 @@
       const covered = $("#covered");
       const textContainer = $("#text-container");
       const percentage = $("#percentage");
-      cardContainer.on("scroll", function () {
-        $("#card-target .inv-card").each(function () {
+      cardContainer.on("scroll", function (e) {
+        cardContainer.css("scroll-snap-type", "none");
+        $("#card-target .inv-card").each(function (i) {
           let left = $(this).offset().left;
-
           if (left > -50 && left < window.innerWidth - 100) {
             currentCard = $(this).data();
-            // $(this).addClass("mvisible");
             total.text(`${$(this).data().total} ر.س`);
             covered.text(`${$(this).data().covered} ر.س`);
             percentage.css({ width: $(this).data().percentage });
@@ -499,9 +498,17 @@
               }
             };
             totalDonation.text(caluclateTotol());
+            setTimeout(() => {
+              // cardContainer.css("scroll-snap-type", "x mandatory");
+            }, 100);
+            if ($(this).hasClass("mvisible")) {
+              return;
+            } else {
+              $(this).addClass("mvisible");
+            }
           } else {
             if ($(this).hasClass("mvisible")) {
-              // $(this).removeClass("mvisible");
+              $(this).removeClass("mvisible");
             }
           }
         });
