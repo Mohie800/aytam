@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.rtl.css" />
+    <link rel="stylesheet" href="assets/style/newPages.css" />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/newStyle.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- start page -->
+
+    <section class="intro pt-3 pt-lg-5 mt-5 friday">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="row">
+                        <div class="col-12 px-0">
+                            <section class="friday-intro" style="background-image: url('./assets/campaign_images/campaign.png')"></section>
+                        </div>
+                        <div class="col-12 over-radius">
+                            <h6 class="text-lightGreen mx-auto mt-2 font-weight-bold title"> name</h6>
+                            <p class="font-12">
+                                فرصة لتشارك الأجر بكفالة اليتيم ، وتظهر الوفاء ، وتهدي الحسنات ، لك ولمن تحب من خلال صك وقفي تساهم فيه بقيمة متر مربع وتستلمه عند مشاركتك بهذه الفرصة . 
+                               
+                            </p>
+                            {{-- ($service->paid*100) / $service->target --}}
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{($donation['donationCampaign']['paid']*100) / $donation['donationCampaign']['target']}}"
+                                aria-valuemin="0" aria-valuemax="100" style="width:50% ;background-color: #9bca41">
+                                  {{number_format(($donation['donationCampaign']['paid']*100) / $donation['donationCampaign']['target'], 2, '.', ',')}}%
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <span class="font-12" style="float:left">المستهدف : {{number_format($donation['donationCampaign']['target'])}}</span>
+                                <span class="font-12" style="float:right">المحقق : {{number_format($donation['donationCampaign']['paid'])}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 col-lg-7 mt-3 mt-lg-0">
+                    <form action="" method="POST" enctype="multipart/form-data" class=""> 
+                        <div class="row">
+                            <div class="col-12 mt-2">
+                                <div class="form-group d-flex align-items-center">
+                                    <h6 class="text-lightGreen mr-2 mt-2">القمية المتبقية لاتمام مبلغ الكفاله  </h6>
+                                    <h4 class="mb-0" >{{ $donation['donationCampaign']['target'] - $donation['donationCampaign']['paid'] }} ريال</h4>
+                                </div>
+                                <div class="col-12 counter-container">
+                                    <div class="form-group d-flex align-items-center">
+                                        <label for="" class="text-grey mb-0">عدد الايتام</label>
+                                        <div class="number ml-3">
+                                            <span class="minus" data-total-amount=1>
+                                                <i class="fas fa-minus"></i>
+                                            </span>
+                                            <input type="text" name="count" disabled value="1"/>
+                                            <span class="plus" data-total-amount=1>
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            
+                            <div class="col-12 mt-2 installment-container" >
+                                <div class="form-group">
+                                     <h6 class="text-lightGreen">خيارات التقسيط</h6>
+                                    <div class="row">
+                                        <div class="col-3" style="padding:3px">
+                                            <label class="after-custome-control" for="daySponsor">
+                                                كفالة يوم
+                                            </label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="daySponsor"
+                                                    name="installment_amount" value="{{ ceil($service->other_details->meter_amount / 360) }}"> 
+                                                <label class="custom-control-label" for="daySponsor">
+                                                   <strong id="daySponsorText">  {{ ceil($service->other_details->meter_amount / 360) }}</strong>ريال
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3" style="padding:3px">
+                                            <label class="after-custome-control" for="weekSponsor">
+                                                كفالة اسبوع
+                                            </label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="weekSponsor"
+                                                    name="installment_amount" value="{{ ceil($service->other_details->meter_amount / 48) }}"> 
+                                                <label class="custom-control-label" for="weekSponsor">
+                                                   <strong id="weekSponsorText">{{ ceil($service->other_details->meter_amount / 48) }}</strong> ريال
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3" style="padding:3px">
+                                            <label class="after-custome-control" for="monthSponsor">
+                                                كفالة شهر
+                                            </label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="monthSponsor"
+                                                    name="installment_amount" value="{{ ceil($service->other_details->meter_amount / 12) }}"> 
+                                                <label class="custom-control-label" for="monthSponsor">
+                                                   <strong id="monthSponsorText">{{ ceil($service->other_details->meter_amount / 12) }}</strong> ريال
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-3" style="padding:3px">
+                                            <label class="after-custome-control" for="completeSponsor">
+                                                اكمال كامل المبلغ 
+                                            </label>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="completeSponsor"
+                                                    name="installment_amount" value="{{ $donation['donationCampaign']['target'] - $donation['donationCampaign']['paid'] }}"> 
+                                                <label class="custom-control-label" for="completeSponsor">
+                                                   <strong id="completeSponsorText">{{ $donation['donationCampaign']['target'] - $donation['donationCampaign']['paid'] }}</strong> ريال
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                
+                                    <div class="form-group">
+                                        <h6 class="text-lightGreen">نوع المساهمة</h6>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="radio" class="custom-control-input" id="donation_period_type_2s"
+                                                        name="donation_period_type" value="{{\App\Enums\DonationPeriodType::one_time->value}}" checked>
+                                                    <label class="custom-control-label" for="donation_period_type_2s">
+                                                        مرة واحدة
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="radio" class="custom-control-input" id="donation_period_type_1s"
+                                                        name="donation_period_type" value="{{\App\Enums\DonationPeriodType::monthly->value}}">
+                                                    <label class="custom-control-label" for="donation_period_type_1s">
+                                                        شهرية
+                                                    </label>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                    </div> 
+
+                                
+                                 <div class="form-group monthly">
+                                    <h6 class="text-muted mt-3">ما هو اليوم المفضل لاستقطاعك؟</h6>
+                                    <div class="days" id="days1">
+                                        
+                                    </div> 
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-2 paymetn-type">
+                                <div class="form-group">
+                                    <h6 class="text-lightGreen">اختر طريقة التبرع</h6>
+                                    <div class="row">
+                                        <div class="col-12 applePayContainer">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="payment1"
+                                                    name="payment">
+                                                <label class="custom-control-label goPay applePay" data-is-apple-pay="yes" for="payment1">
+                                                    <div class="d-flex align-items-center justify-content-center p-1">
+                                                        <img src="{{ asset('web/img/small-images/apple-pay-white.png') }}" alt="">
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 credit-card-option-container">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" checked class="custom-control-input" id="payment3"
+                                                    name="payment">
+                                                <label class="custom-control-label" for="payment3">
+                                                    <div class="d-flex align-items-center justify-content-center p-1">
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="{{ asset('web/img/small-images/credit-card-dark.png') }}"
+                                                                alt="">
+                                                            <p class="mb-0 ml-2">البطاقة الائتمانية</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 bank-transfer-option-container">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="radio" class="custom-control-input" id="payment2"
+                                                    name="payment" value="bankTransfer">
+                                                <label class="custom-control-label" for="payment2">
+                                                    <div class="d-flex align-items-center justify-content-center p-1">
+                                                        <img src="{{ asset('web/img/small-images/bank-transfer-dark.png') }}">
+                                                        <p class="mb-0 ml-2">حوالة بنكية</p>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <x-bank-transer-component />
+                            <div class="col-12 goPayContainer">
+                                <button type="submit" class="btn btn-filled w-100 goPay">
+                                    تبرع الآن
+                                </button>
+                            </div>
+                        </div>
+                     </form> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="mw-lg-50" data-aos="fade-right" data-aos-duration="800">
+         <img src="{{asset('web/img/small-images/hand.png')}}" class="floating-img" alt="">
+        <h6 class="text-green">
+            لماذا تتبرع لهذا المشروع؟:
+        </h6>
+        <p class="text-center font-12">
+            لتكون لك عادة سامية ، وعوائد طيبة ، وصدقةٌ مستدامة ، فتدخل في خيرية القليل الدائم ، وتدخل في بركة مرافقة رسول الله صلى الله عليه وسلم في الجنة كما قال رسول الله صلى الله عليه وسلم " أنا وكافل اليتيم كهاتين في الجنة" 
+        </p> 
+        <div class=" mb-5" >
+            <img src="{{asset('web/img/small-images/sak-why.png')}}" class="w-100" alt="">
+        </div>
+    </section>
+
+
+    <section class="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h6 class="title text-green mx-auto mb-5">
+                        الأسئلة المتكررة
+                    </h6>
+                </div>
+                <div class="col-12">
+                    <div id="accordion">
+                        <div class="card"  data-aos="fade-left" data-aos-duration="800">
+                            <div class="card-header" data-toggle="collapse" href="#collapseOne">
+                                <p>
+                                    هل يمكنني إهداء الصّك باسم شخص معيّن ؟
+                                </p>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>
+                                        نعم بإمكانك التبرع بقيمته ونيته لشخص محدد وكذلك إهداؤه ليصله مباشرة إلى موقعه 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card"  data-aos="fade-right" data-aos-duration="800">
+                            <div class="card-header"  data-toggle="collapse" href="#collapseTwo">
+                                <p>
+                                    ماذا تعني المساهمة في  متر الوقف ؟ 
+                                </p>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>
+                                        تعني أنك أوقفت قيمة متر حقيقي في أرض الوقف 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card"  data-aos="fade-left" data-aos-duration="800">
+                            <div class="card-header"  data-toggle="collapse" href="#collapseThree">
+                                <p>
+                                    كيف تكون طريقة القطيّة؟
+                                </p>
+                                <i class="fas fa-minus"></i>
+                            </div>
+                            <div id="collapseThree" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>
+                                        عن طريق بداية التبرع من قبل المتبرع وتحديد الاسم 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="numbers">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <div class="d-flex">
+                        <div>
+                            <h3 class="text-white font-25">
+                                أرقــــــــــــــــام
+                                <br>
+                                حقـقتهـــــــــا
+                                <br> 
+                                مساهمتكم
+                                <br> 
+                                المعطـــــــاء 
+                            </h3>
+                            <p class="text-white font-11">
+                                بفضـــــــل الله ثـــــم بجزيـــــــل 
+                                <br>
+                                عطائكم تمـــت المســـاهمة 
+                                <br>
+                                في المشاريع التالية
+                            </p>
+                        </div>
+                        <div class="">
+                            <div class="num-container">
+                                <div class="content">
+                                    <h5 class="text-green"  data-aos="zoom-in-down" data-aos-duration="800">
+                                        + 1.1 مليون ريال
+                                    </h5>
+                                    <p class="font-12" data-aos="fade-up" data-aos-duration="500">مصروفات إيجار المنازل 2022م</p>
+                                </div>
+                            </div>
+                            <div class="num-container">
+                                <div class="content">
+                                    <h5 class="text-green"  data-aos="zoom-in-down" data-aos-duration="800">
+                                        + 815 ألف ريال
+                                    </h5>
+                                    <p class="font-12"  data-aos="fade-up" data-aos-duration="500">الكفالة الشهرية 2022م</p>
+                                </div>
+                            </div>
+                            <div class="num-container">
+                                <div class="content">
+                                    <h5 class="text-green"  data-aos="zoom-in-down" data-aos-duration="800">
+                                        + 1 مليون ريال
+                                    </h5>
+                                    <p class="font-12"  data-aos="fade-up" data-aos-duration="500">مشروع ساعد 2022م</p>
+                                </div>
+                            </div>
+                            <div class="num-container">
+                                <div class="content">
+                                    <h5 class="text-green"  data-aos="zoom-in-down" data-aos-duration="800">
+                                        + 306 ألف ريال
+                                    </h5>
+                                    <p class="font-12"  data-aos="fade-up" data-aos-duration="500">كسوة الشتاء</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="{{asset('web/img/small-images/how-to-share.png')}}" class="w-100 mt-lg-minus-50" alt="" >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end page -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-out-back",
+        duration: 800,
+      });
+    </script>
+    <script>
+
+        var share_type_by_self = "{{\App\Enums\EducationalSponsorshipType::by_self->value}}";
+        var share_type_share_with_others = "{{\App\Enums\EducationalSponsorshipType::share_with_others->value}}";
+        
+        $(document).ready(function(){
+    
+            appendMyasarScript(6000000, educationSponsorshipRoute);
+        })
+    
+        $('.slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            centerMode: false,
+            rtl: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    
+        $('.partners .images-container').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            rtl: false,
+            
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            
+                        }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+    
+        $('.wakf-slider').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            centerMode: false,
+            rtl: false,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+        // @for($i = 1; $i < 29; $i++)
+        // <div class="custom-control custom-checkbox">
+        //     <input type="radio" class="custom-control-input" id="day_{{$i}}"
+        //         name="day_number" value="{{$i}}">
+        //     <label class="custom-control-label" for="day_{{$i}}">
+        //         {{$i}}
+        //     </label>
+        // </div>
+        // @endfor
+    </script>
+</body>
+</html>
+
+
+    
+    
+
+

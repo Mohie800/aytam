@@ -186,7 +186,7 @@
             </label>
           </div>
         </div>
-        <div class="col-6 col-sm-2">
+        <!-- <div class="col-6 col-sm-2">
           <div class="inv-control custom-checkbox">
             <input
               type="radio"
@@ -203,7 +203,7 @@
               >10 أسهم
             </label>
           </div>
-        </div>
+        </div> -->
         <div class="col-12 col-sm-8">
           <div class="form-group mt-2 mb-3" id="shown-input">
             <input
@@ -215,6 +215,32 @@
               value=""
               data-price=""
               placeholder="حدد عدد الأسهم"
+            />
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="custom-control custom-checkbox" id="shown-input">
+            <input
+              type="radio"
+              class="custom-control-input"
+              id="customCheck3"
+              name="amount"
+              data-share-type="family"
+              value="other"
+              data-price=""
+            />
+            <label class="custom-control-label w-100" for="customCheck3">
+              مبلغ اخر
+            </label>
+          </div>
+          <div class="form-group mt-2 mb-0 d-none" id="hidden-input">
+            <input
+              type="number"
+              name="custome_amount"
+              min="91"
+              class="form-control"
+              placeholder="قيمة مبلغ المساهمة"
+              fdprocessedid="vvy2fj"
             />
           </div>
         </div>
@@ -483,6 +509,7 @@
         $("#card-target .inv-card").each(function (i) {
           let left = $(this).offset().left;
           if (left > -50 && left < window.innerWidth - 100) {
+            $(this).addClass("mvisible");
             currentCard = $(this).data();
             total.text(`${$(this).data().total} ر.س`);
             covered.text(`${$(this).data().covered} ر.س`);
@@ -498,14 +525,9 @@
               }
             };
             totalDonation.text(caluclateTotol());
-            setTimeout(() => {
-              // cardContainer.css("scroll-snap-type", "x mandatory");
-            }, 100);
-            if ($(this).hasClass("mvisible")) {
-              return;
-            } else {
-              $(this).addClass("mvisible");
-            }
+            // setTimeout(() => {
+            //   cardContainer.css("scroll-snap-type", "x mandatory");
+            // }, 100);
           } else {
             if ($(this).hasClass("mvisible")) {
               $(this).removeClass("mvisible");
@@ -521,9 +543,34 @@
         } else {
           totalDonation.text(Number(currentCard.value) * 10);
         }
+        console.log();
       });
       $(customCheck1).on("input", (e) => {
         totalDonation.text(Number(currentCard.value) * e.target.value);
+        console.log(currentCard);
+      });
+    </script>
+    <script>
+      $(`input[name = "amount"]`).on("change", function () {
+        let selectedValue = $(`input[name="amount"]:checked`).val();
+        if (selectedValue == "other") {
+          $(".counter-container").hide();
+        } else {
+          $(".counter-container").show();
+        }
+      });
+
+      $('input[name = "amount"]').on("change", function () {
+        console.log($('input[name = "amount"]:checked').val());
+        if ($('input[name = "amount"]:checked').val() == "other") {
+          $("#shown-input").addClass("d-none");
+          $("#hidden-input").removeClass("d-none");
+          $("#hidden-input input").prop("disabled", false);
+        } else {
+          $("#hidden-input").addClass("d-none");
+          $("#shown-input").removeClass("d-none");
+          $("#hidden-input input").prop("disabled", true);
+        }
       });
     </script>
   </body>

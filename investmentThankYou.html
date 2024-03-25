@@ -22,6 +22,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
     <!--  -->
+    <!-- icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <title>Document</title>
   </head>
@@ -156,12 +161,19 @@
         إختر وسيلة التواصل المفضلة
       </h5>
       <p class="font-s-11 blue">لتلقي التنبيهات والعروض من المنصة</p>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-4 d-flex justify-content-center">
           <button
-            class="rounded-4 d-flex align-items-center justify-content-center p-3 thank-btn share-box w-100 h-100"
+            class="rounded-4 d-flex align-items-center justify-content-center p-3 thank-bt share-box w-100 h-100"
+            id="container1"
           >
-            <img src="assets/whatsapp.svg" alt="" />
+            <i class="fab fa-whatsapp font-s-22"></i>
+            <input
+              class="form-check-input d-none"
+              type="checkbox"
+              value=""
+              id="flexCheckDefault1"
+            />
           </button>
         </div>
         <div class="col-4 d-flex">
@@ -173,10 +185,96 @@
         </div>
         <div class="col-4 d-flex">
           <button
-            class="rounded-4 d-flex align-items-center justify-content-center p-3 w-100 share-box h-100"
+            class="rounded-4 d-flex align-items-center justify-content-center p-3 w-100 share-box h-100 text-lightGreen"
           >
-            <img src="assets/Vector (2).png" alt="" />
+            <i class="fa fa-phone font-s-22" aria-hidden="true"></i>
           </button>
+        </div>
+      </div> -->
+      <div class="row">
+        <div class="col-3">
+          <div class="d-flex rounded-4 don-type p-2" id="container1">
+            <div class="form-check green-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault1"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <i class="fa fa-phone font-s-22" aria-hidden="true"></i>
+              </div>
+              <div class="col-12">
+                <div class="font-s-11 text-center">اتصال</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="d-flex rounded-4 don-type p-2" id="container1">
+            <div class="form-check green-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault2"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <i class="fab fa-whatsapp font-s-22"></i>
+              </div>
+              <div class="col-12">
+                <div class="font-s-11 text-center">واتساب</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="d-flex rounded-4 don-type p-2" id="container1">
+            <div class="form-check green-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault3"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <i class="fa fa-envelope font-s-22" aria-hidden="true"></i>
+              </div>
+              <div class="col-12">
+                <div class="font-s-11 text-center">البريد</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="d-flex rounded-4 don-type p-2" id="container1">
+            <div class="form-check green-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault4"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center">
+                <i class="fa fa-commenting font-s-22" aria-hidden="true"></i>
+              </div>
+              <div class="col-12">
+                <div class="font-s-11 text-center">رسائل نصية</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <h6 class="text-lightGreen mt-3">رابط الحصالة</h6>
@@ -280,10 +378,95 @@
 
     <!-- end page -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       const ratings = document.getElementById("rating1");
       const rating1 = new CDB.Rating(ratings);
       rating1.getRating;
+
+      function toggleCheckboxState(container) {
+        container.prop("checked", !container.prop("checked")).change();
+      }
+      const checkbox1 = $("#flexCheckDefault1");
+      checkbox1
+        .parent()
+        .parent()
+        .on("click", () => {
+          toggleCheckboxState(checkbox1);
+        });
+      checkbox1.on("change", () => {
+        if (checkbox1.prop("checked")) {
+          checkbox1
+            .parent()
+            .parent()
+            .addClass("don-type-active text-lightGreen");
+        } else {
+          checkbox1
+            .parent()
+            .parent()
+            .removeClass("don-type-active text-lightGreen");
+        }
+      });
+      const checkbox2 = $("#flexCheckDefault2");
+      checkbox2
+        .parent()
+        .parent()
+        .on("click", () => {
+          toggleCheckboxState(checkbox2);
+        });
+      checkbox2.on("change", () => {
+        if (checkbox2.prop("checked")) {
+          checkbox2
+            .parent()
+            .parent()
+            .addClass("don-type-active text-lightGreen");
+        } else {
+          checkbox2
+            .parent()
+            .parent()
+            .removeClass("don-type-active text-lightGreen");
+        }
+      });
+      const checkbox3 = $("#flexCheckDefault3");
+      checkbox3
+        .parent()
+        .parent()
+        .on("click", () => {
+          toggleCheckboxState(checkbox3);
+        });
+      checkbox3.on("change", () => {
+        if (checkbox3.prop("checked")) {
+          checkbox3
+            .parent()
+            .parent()
+            .addClass("don-type-active text-lightGreen");
+        } else {
+          checkbox3
+            .parent()
+            .parent()
+            .removeClass("don-type-active text-lightGreen");
+        }
+      });
+      const checkbox4 = $("#flexCheckDefault4");
+      checkbox4
+        .parent()
+        .parent()
+        .on("click", () => {
+          toggleCheckboxState(checkbox4);
+        });
+      checkbox4.on("change", () => {
+        if (checkbox4.prop("checked")) {
+          checkbox4
+            .parent()
+            .parent()
+            .addClass("don-type-active text-lightGreen");
+        } else {
+          checkbox4
+            .parent()
+            .parent()
+            .removeClass("don-type-active text-lightGreen");
+        }
+      });
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -295,7 +478,6 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
