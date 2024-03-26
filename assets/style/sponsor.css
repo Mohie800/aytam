@@ -16,11 +16,17 @@
 .custom-control-input-sponsor:checked ~ .textGreen {
   color: #9bca41;
 }
+
 .custom-control-input-sponsor:disabled ~ .textGreen {
   color: #dedde4;
 }
 .custom-control-input-sponsor:disabled ~ .black {
   color: #dedde4;
+}
+
+.custom-control-input-sponsor:checked ~ .filter > .filter {
+  filter: invert(75%) sepia(64%) saturate(454%) hue-rotate(30deg)
+    brightness(91%) contrast(86%);
 }
 
 .custom-control-input-sponsor {

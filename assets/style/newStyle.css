@@ -7,10 +7,10 @@ h6 {
 }
 
 .bank-bg {
-    background-image: url("../img/hasala/background.png");
-    height: 40vh;
-    background-size: cover;
-    background-position: center;
+  background-image: url("../img/hasala/background.png");
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
 }
 
 .shape-1 {
@@ -45,8 +45,8 @@ h6 {
 }
 
 .font-s-16 {
-    font-size: 16px !important;
-  }
+  font-size: 16px !important;
+}
 
 .font-s-18 {
   font-size: 18px !important;
@@ -88,7 +88,7 @@ h6 {
   border: #9bca41 dashed 2px;
 }
 .box-home-bg {
-    background-image: url(../img/hasala//Rectangle.png);
+  background-image: url(../img/hasala//Rectangle.png);
   background-size: cover;
   height: 300px;
   margin: 20px;
@@ -323,7 +323,7 @@ h6 {
 
 /* investmet page css */
 .inv-bg {
-  background-image: url('../investment_images/inv_bg.png');
+  background-image: url("../investment_images/inv_bg.png");
   height: 40vh;
   background-size: cover;
   background-position: center;

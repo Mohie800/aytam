@@ -1,0 +1,28 @@
+.text-light-blue {
+  color: #4143a4;
+}
+.bg-light-green {
+  background: #edf8ec;
+}
+.number-circle-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  width: fit-content;
+  height: fit-content;
+}
+.number-circle-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #9bca41;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  color: #fff;
+}
