@@ -66,3 +66,24 @@
 .count-container {
   background-color: #fff !important;
 }
+
+.green-check input[type="checkbox"]:checked ~ label {
+  color: #9bca41;
+}
+
+.number-prefix {
+  position: absolute;
+  left: 4px;
+  top: 35%;
+  background-color: #fff;
+  padding: 12px;
+  font-size: 11px;
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+  padding-block: 15px;
+}
+
+.preview-btn {
+  border-radius: 50px !important;
+  color: #9bca41 !important;
+}
