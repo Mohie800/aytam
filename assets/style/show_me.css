@@ -26,3 +26,29 @@
   font-size: 18px;
   color: #fff;
 }
+
+.gray-border {
+  border: 1px solid #dedde4;
+}
+
+.thank-btn {
+  background-color: #9bca41 !important;
+}
+
+.gray-filter {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.star-image {
+  max-width: 100%;
+}
+
+.c-centered {
+  display: flex;
+  align-items: center;
+}
+
+.greenBorder {
+  border: 1px solid #9bca41 !important;
+}
